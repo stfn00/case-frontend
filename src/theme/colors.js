@@ -1,17 +1,14 @@
 export default {
-  primary: {
+  light: {
     surface: {
-      default: '#FFFFFF',
+      background: '#FFFFFF',
+      text: '#000000',
     }
   },
-  secondary: {
+  dark: {
     surface: {
-      default: '#CCCCCC',
-    }
-  },
-  tertiary: {
-    surface: {
-      default: '#000000',
+      background: '#000000',
+      text: '#FFFFFF',
     }
   },
   grayscale: {

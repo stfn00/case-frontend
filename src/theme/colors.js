@@ -3,12 +3,78 @@ export default {
     surface: {
       background: '#FFFFFF',
       text: '#000000',
+    },
+    button: {
+      primary: {
+        background: '#FFFFFF',
+        text: '#000000',
+        border: '#000000',
+        hover: {
+          background: '#000000',
+          text: '#FFFFFF',
+          border: '#000000',
+        },
+        focus: {
+          shadow: '#000000',
+        },
+        disabled: {
+          background: '#EEEEEE',
+          text: '#BBBBBB',
+          border: '#BBBBBB',
+        }
+      },
+      secondary: {
+        background: 'transparent',
+        text: '#000000',
+        hover: {
+          
+        },
+        focus: {
+          shadow: '#000000',
+        },
+        disabled: {
+          text: '#CCCCCC',
+        }
+      }
     }
   },
   dark: {
     surface: {
       background: '#000000',
       text: '#FFFFFF',
+    },
+    button: {
+      primary: {
+        background: '#000000',
+        text: '#FFFFFF',
+        border: '#FFFFFF',
+        hover: {
+          background: '#FFFFFF',
+          text: '#000000',
+          border: '#FFFFFF',
+        },
+        focus: {
+          shadow: '#FFFFFF',
+        },
+        disabled: {
+          background: '#EEEEEE',
+          text: '#787878',
+          border: '#787878',
+        }
+      },
+      secondary: {
+        background: 'transparent',
+        text: '#FFFFFF',
+        hover: {
+          
+        },
+        focus: {
+          shadow: '#FFFFFF',
+        },
+        disabled: {
+          text: '#787878',
+        }
+      },
     }
   },
   grayscale: {

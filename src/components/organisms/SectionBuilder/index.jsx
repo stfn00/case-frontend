@@ -6,7 +6,9 @@ import SectionThemeProvider from '@/contexts/SectionTheme'
 
 import * as Components from '@/components/organisms'
 
-const componentsDispatcher = {}
+const componentsDispatcher = {
+  Hero: 'Hero',
+}
 
 const SectionBuilder = ({ data }) => (
   data && data.length &&

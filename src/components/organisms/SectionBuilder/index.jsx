@@ -14,7 +14,7 @@ const SectionBuilder = ({ data }) => (
   data && data.length &&
     data.map((props, index) => {
       const Component = Components[componentsDispatcher[props.type]]
-      const key = props.id + index + props.type
+      const key = `Section${props.type}${index + 1}`
 
       return Component ? (
         <SectionThemeProvider key={key} colorScheme={props.colorScheme}>

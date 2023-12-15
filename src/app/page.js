@@ -1,5 +1,12 @@
+import SectionBuilder from "@/components/organisms/SectionBuilder"
+import ThemeProvider from '@/contexts/Theme'
+
+const sections = []
+
 export default function Home() {
   return (
-    <h1>Home</h1>
+    <ThemeProvider>
+      <SectionBuilder data={sections} />
+    </ThemeProvider>
   )
 }

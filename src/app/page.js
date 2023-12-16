@@ -1,5 +1,8 @@
-import SectionBuilder from "@/components/organisms/SectionBuilder"
 import ThemeProvider from '@/contexts/Theme'
+
+import Header from "@/components/layouts/Header"
+
+import SectionBuilder from "@/components/organisms/SectionBuilder"
 
 const sections = [
   {
@@ -11,6 +14,7 @@ const sections = [
 export default function Home() {
   return (
     <ThemeProvider>
+      <Header />
       <SectionBuilder data={sections} />
     </ThemeProvider>
   )

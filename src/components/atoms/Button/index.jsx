@@ -45,14 +45,14 @@ const Button = ({
   variant = 'primary',
   iconEnd,
   iconEndSize,
-  uppercase,
+  inheritedColorScheme,
   innerRef,
   scrollTo,
   handleClick = () => {},
   ...props
 }) => {
   // Get the selected color scheme from the context
-  const { selectedColorScheme = 'light' } = useContext(SectionThemeContext) || {}
+  const { selectedColorScheme = inheritedColorScheme || 'light' } = useContext(SectionThemeContext) || {}
 
   // Generate the ARIA props for the button
   const ariaProps = getAriaProps({
@@ -89,6 +89,7 @@ const Button = ({
     }
   }
 
+  console.log(selectedColorScheme, variant);
   return (
     <LinkWrapper href={href} target={target}>
       <S.Button
@@ -136,7 +137,6 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['primary', 'secondary']),
   iconEnd: PropTypes.string,
   iconEndSize: PropTypes.string,
-  uppercase: PropTypes.bool,
   innerRef: PropTypes.oneOfType([PropTypes.func, PropTypes.object]),
   scrollTo: PropTypes.string,
   handleClick: PropTypes.func

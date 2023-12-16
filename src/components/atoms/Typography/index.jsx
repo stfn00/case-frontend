@@ -3,8 +3,8 @@ import { SectionThemeContext } from '@/contexts/SectionTheme'
 
 import * as S from './styles'
 
-const Typography = ({ children, content, ...props }) => {
-  const { selectedColorScheme = 'light' } = useContext(SectionThemeContext) || {}
+const Typography = ({ children, content, inheritedColorScheme, ...props }) => {
+  const { selectedColorScheme = inheritedColorScheme || 'light' } = useContext(SectionThemeContext) || {}
 
   const renderContent = () =>
     typeof children === 'string' ? (

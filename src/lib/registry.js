@@ -7,7 +7,19 @@ import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 export default function StyledComponentsRegistry({ children }) {
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
 
-  const hiddenStyledProps = ['colorScheme', 'variant', 'iconEnd']
+  const hiddenStyledProps = [
+    'colorScheme',
+    'variant',
+    'iconEnd',
+    'debug',
+    'offsetRight',
+    'xs',
+    'sm',
+    'md',
+    'lg',
+    'xl',
+    'xxl',
+  ]
 
   useServerInsertedHTML(() => {
     const styles = styledComponentsStyleSheet.getStyleElement()

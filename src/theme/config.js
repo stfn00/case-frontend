@@ -12,5 +12,7 @@ export default {
     normal: '0.3s ease-in-out',
     fast: '0.2s ease-in-out',
   },
-  layers: {},
+  layers: {
+    header: 10,
+  },
 }

@@ -1,21 +1,11 @@
 export default {
-  display3XL: {
-    'font-size': 72,
-    'line-height': 80,
-    mq: {
-      lg: {
-        'font-size': 104,
-        'line-height': 112,
-      }
-    }
-  },
   display2XL: {
     'font-size': 60,
-    'line-height': 72,
+    'line-height': 55,
     mq: {
       lg: {
-        'font-size': 72,
-        'line-height': 80,
+        'font-size': 70,
+        'line-height': 65,
       }
     }
   },
@@ -71,7 +61,7 @@ export default {
   },
   paragraphSM: {
     'font-size': 14,
-    'line-height': 20,
+    'line-height': 24,
   },
   paragraphMD: {
     'font-size': 16,
@@ -80,5 +70,9 @@ export default {
   paragraphLG: {
     'font-size': 18,
     'line-height': 28,
+  },
+  paragraphXL: {
+    'font-size': 20,
+    'line-height': 18,
   },
 }

@@ -26,9 +26,7 @@ export default {
       secondary: {
         background: 'transparent',
         text: '#000000',
-        hover: {
-          
-        },
+        hover: {},
         focus: {
           shadow: '#000000',
         },
@@ -65,9 +63,7 @@ export default {
       secondary: {
         background: 'transparent',
         text: '#FFFFFF',
-        hover: {
-          
-        },
+        hover: {},
         focus: {
           shadow: '#FFFFFF',
         },

@@ -1,8 +1,8 @@
 import ThemeProvider from '@/contexts/Theme'
 
-import Header from "@/components/layouts/Header"
+import Header from '@/components/layouts/Header'
 
-import SectionBuilder from "@/components/organisms/SectionBuilder"
+import SectionBuilder from '@/components/organisms/SectionBuilder'
 
 const sections = [
   {

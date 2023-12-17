@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const Typography = styled.p`
   ${({ theme, typo }) => theme.typo(typo || 'paragraphMD')};

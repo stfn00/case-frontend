@@ -1,6 +1,7 @@
 import theme from './config'
-
 import convertToObject from '@/utils/convert-to-object'
+
+export const mediaQuery = {}
 
 export function rem(...values) {
   return values.map(px => `${+px / 16}rem`).join(' ')
@@ -83,8 +84,6 @@ const processCss = (css) => {
 
   return injectedCss
 }
-
-export const mediaQuery = {}
 
 for (const key in theme.breakpoints) {
   mediaQuery[key] = function (css) {

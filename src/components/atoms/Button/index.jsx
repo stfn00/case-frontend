@@ -41,7 +41,6 @@ const Button = ({
   rel,
   disabled,
   tabIndex,
-  typo = 'buttonMD',
   variant = 'primary',
   iconEnd,
   iconEndSize,

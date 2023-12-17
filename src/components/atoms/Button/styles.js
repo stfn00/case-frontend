@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components"
+import styled, { css } from 'styled-components'
 
 export const ButtonLabel = styled.span`
-  ${({ theme, typo, variant }) => (variant == 'primary') && css`
+  ${({ theme, typo, variant }) => (variant === 'primary') && css`
     ${theme.typo(typo || 'paragraphXL')};
   `}
-  ${({ theme, typo, variant }) => (variant == 'secondary') && css`
+  ${({ theme, typo, variant }) => (variant === 'secondary') && css`
     ${theme.typo(typo || 'paragraphSM')};
   `}
   font-weight: 400;
@@ -28,7 +28,7 @@ export const Button = styled.button`
     primary: theme.rem(8, 16),
     secondary: '0',
   })};
-  ${({ variant }) => (variant == 'secondary') && css`
+  ${({ variant }) => (variant === 'secondary') && css`
     background-image: linear-gradient(0deg, currentColor, currentColor);
     background-position: left 100%;
     background-repeat: no-repeat;
@@ -53,11 +53,11 @@ export const Button = styled.button`
         color: ${({ theme, colorScheme, variant }) => theme.colors[colorScheme].button[variant].hover.text};
         background-color: ${({ theme, colorScheme, variant }) => theme.colors[colorScheme].button[variant].hover.background};
         border: ${({ theme, colorScheme, variant }) => theme.styledVariant('variant', {
-          primary: `1px solid ${theme.colors[colorScheme].button[variant].hover.border}`,
-          secondary: '0',
-        })};
+    primary: `1px solid ${theme.colors[colorScheme].button[variant].hover.border}`,
+    secondary: '0',
+  })};
 
-        ${({ variant, $label, iconEnd }) => (variant == 'secondary' && $label) && css`
+        ${({ variant, $label, iconEnd }) => (variant === 'secondary' && $label) && css`
           background-size: ${iconEnd ? 'calc(100% - 18px)' : '100%'} 1px;
           outline-width: 0;
         `}
@@ -84,9 +84,9 @@ export const Button = styled.button`
     color: ${({ theme, colorScheme, variant }) => theme.colors[colorScheme].button[variant].disabled.text};
     background-color: ${({ theme, colorScheme, variant }) => theme.colors[colorScheme].button[variant].disabled.background};
     border: ${({ theme, colorScheme, variant }) => theme.styledVariant('variant', {
-      primary: `1px solid ${theme.colors[colorScheme].button[variant].disabled.border}`,
-      secondary: '0',
-    })};
+    primary: `1px solid ${theme.colors[colorScheme].button[variant].disabled.border}`,
+    secondary: '0',
+  })};
     pointer-events: none;
     cursor: not-allowed;
   }
@@ -99,4 +99,4 @@ export const Button = styled.button`
   ${ButtonLabel} {
     margin-right: ${({ theme, iconEnd }) => iconEnd ? theme.rem(4) : '0'};
   }
-`;
+`

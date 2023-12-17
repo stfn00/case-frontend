@@ -1,7 +1,12 @@
 import styled, { css } from "styled-components"
 
 export const ButtonLabel = styled.span`
-  ${({ theme, typo }) => theme.typo(typo || 'paragraphMD')};
+  ${({ theme, typo, variant }) => (variant == 'primary') && css`
+    ${theme.typo(typo || 'paragraphXL')};
+  `}
+  ${({ theme, typo, variant }) => (variant == 'secondary') && css`
+    ${theme.typo(typo || 'paragraphSM')};
+  `}
   font-weight: 400;
   letter-spacing: 0.08em;
   pointer-events: none;
@@ -52,7 +57,7 @@ export const Button = styled.button`
           secondary: '0',
         })};
 
-        ${({ variant, iconEnd }) => (variant == 'secondary') && css`
+        ${({ variant, $label, iconEnd }) => (variant == 'secondary' && $label) && css`
           background-size: ${iconEnd ? 'calc(100% - 18px)' : '100%'} 1px;
           outline-width: 0;
         `}

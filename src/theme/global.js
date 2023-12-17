@@ -4,6 +4,11 @@ import { css, createGlobalStyle } from 'styled-components'
 
 import { gothamFont } from './fonts'
 
+import 'swiper/css'
+import 'swiper/css/a11y'
+import 'swiper/css/mousewheel'
+import 'swiper/css/navigation'
+
 import { library } from '@fortawesome/fontawesome-svg-core'
 import * as Icons from '@fortawesome/free-solid-svg-icons'
 

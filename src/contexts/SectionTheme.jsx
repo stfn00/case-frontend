@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, createContext, useEffect } from 'react'
+import { useState, createContext, useEffect } from 'react'
 
 export const SectionThemeContext = createContext()
 

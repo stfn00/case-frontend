@@ -89,7 +89,6 @@ const Button = ({
     }
   }
 
-  console.log(selectedColorScheme, variant);
   return (
     <LinkWrapper href={href} target={target}>
       <S.Button

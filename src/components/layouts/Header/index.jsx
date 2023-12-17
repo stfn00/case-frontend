@@ -1,6 +1,6 @@
 'use client'
 
-import { Container } from '@/components/atoms/GridSystem'
+import { Container, Visible } from '@/components/atoms/GridSystem'
 import Typography from '@/components/atoms/Typography'
 import Button from '@/components/atoms/Button'
 
@@ -12,12 +12,14 @@ const Header = () => {
       <S.HeaderLogo>
         <Typography content="Logo" inheritedColorScheme="dark" />
       </S.HeaderLogo>
-      <S.HeaderMenu>
-        <Button label="we are" variant="secondary" inheritedColorScheme="dark" />
-        <Button label="we do" variant="secondary" inheritedColorScheme="dark" />
-        <Button label="careers" variant="secondary" inheritedColorScheme="dark" />
-        <Button label="contact us" variant="secondary" inheritedColorScheme="dark" />
-      </S.HeaderMenu>
+      <Visible breakpoints={['lg', 'xl', 'xxl']}>
+        <S.HeaderMenu>
+          <Button label="we are" variant="secondary" inheritedColorScheme="dark" />
+          <Button label="we do" variant="secondary" inheritedColorScheme="dark" />
+          <Button label="careers" variant="secondary" inheritedColorScheme="dark" />
+          <Button label="contact us" variant="secondary" inheritedColorScheme="dark" />
+        </S.HeaderMenu>
+      </Visible>
     </S.Header>
   )
 }

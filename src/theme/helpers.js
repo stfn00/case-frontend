@@ -6,6 +6,10 @@ export function rem(...values) {
   return values.map(px => `${+px / 16}rem`).join(' ')
 }
 
+export function spacing(scalar = 1) {
+  return rem(Number(scalar) * 16)
+}
+
 export function typo(key) {
   const rules = []
 

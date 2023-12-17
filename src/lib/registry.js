@@ -1,10 +1,10 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
-export default function StyledComponentsRegistry({ children }) {
+const StyledComponentsRegistry = ({ children }) => {
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
 
   const hiddenStyledProps = [
@@ -21,18 +21,29 @@ export default function StyledComponentsRegistry({ children }) {
     'xxl',
   ]
 
-  useServerInsertedHTML(() => {
-    const styles = styledComponentsStyleSheet.getStyleElement()
-    styledComponentsStyleSheet.instance.clearTag()
-    return <>{styles}</>
-  })
+  const shouldForwardProp = (prop) => !hiddenStyledProps.includes(prop)
+
+  useEffect(() => {
+    return () => {
+      styledComponentsStyleSheet.instance.clearTag()
+    }
+  }, [styledComponentsStyleSheet])
 
   return (
     <StyleSheetManager
-      sheet={styledComponentsStyleSheet.instance}
-      shouldForwardProp={(prop) => !hiddenStyledProps.includes(prop)}
+      sheet={
+        typeof window !== 'undefined'
+          ? undefined
+          : styledComponentsStyleSheet.instance
+      }
+      shouldForwardProp={shouldForwardProp}
     >
       {children}
+      {useServerInsertedHTML(() =>
+        styledComponentsStyleSheet.getStyleElement()
+      )}
     </StyleSheetManager>
   )
 }
+
+export default StyledComponentsRegistry

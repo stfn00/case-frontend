@@ -36,6 +36,43 @@ export default {
       }
     }
   },
+  gray: {
+    surface: {
+      background: '#ccc',
+      text: '#000000',
+    },
+    button: {
+      primary: {
+        background: '#000000',
+        text: '#FFFFFF',
+        border: '#FFFFFF',
+        hover: {
+          background: '#FFFFFF',
+          text: '#000000',
+          border: '#FFFFFF',
+        },
+        focus: {
+          shadow: '#FFFFFF',
+        },
+        disabled: {
+          background: '#EEEEEE',
+          text: '#787878',
+          border: '#787878',
+        }
+      },
+      secondary: {
+        background: 'transparent',
+        text: '#FFFFFF',
+        hover: {},
+        focus: {
+          shadow: '#FFFFFF',
+        },
+        disabled: {
+          text: '#787878',
+        }
+      },
+    }
+  },
   dark: {
     surface: {
       background: '#000000',

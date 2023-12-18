@@ -99,4 +99,8 @@ export const Button = styled.button`
   ${ButtonLabel} {
     margin-right: ${({ theme, iconEnd }) => iconEnd ? theme.rem(4) : '0'};
   }
+
+  ${({ fullWidth }) => fullWidth && css`
+    width: 100%;
+  `}
 `

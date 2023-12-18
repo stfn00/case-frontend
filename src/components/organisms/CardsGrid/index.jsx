@@ -28,25 +28,7 @@ const CardsGrid = ({ sectionID, items }) => {
 
 CardsGrid.propTypes = {
   sectionID: PropTypes.string,
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    image: PropTypes.shape({
-      src: PropTypes.string,
-      alt: PropTypes.string,
-    }),
-    title: PropTypes.shape({
-      content: PropTypes.string,
-      typo: PropTypes.string,
-    }),
-    paragraph: PropTypes.shape({
-      content: PropTypes.string,
-      typo: PropTypes.string,
-    }),
-    cta: PropTypes.shape({
-      label: PropTypes.string,
-      url: PropTypes.string,
-    }),
-  })),
+  items: PropTypes.array,
 }
 
 export default CardsGrid

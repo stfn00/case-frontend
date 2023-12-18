@@ -9,6 +9,7 @@ import * as Components from '@/components/organisms'
 const componentsDispatcher = {
   Hero: 'Hero',
   Banner: 'Banner',
+  CardsGrid: 'CardsGrid',
 }
 
 const SectionBuilder = ({ data }) => (

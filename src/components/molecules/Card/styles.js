@@ -8,6 +8,8 @@ export const Card = styled.div`
   justify-content: center;
   align-items: center;
   margin: ${({ theme }) => theme.rem(24, 0)};
+  opacity: 0;
+  will-change: transform;
 `
 
 export const CardHeader = styled.div`

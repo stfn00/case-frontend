@@ -8,7 +8,7 @@ import * as S from './styles'
 
 const Card = ({ image, title, paragraph, cta }) => {
   return (
-    <S.Card>
+    <S.Card className="card">
       <S.CardHeader>
         <Image {...image} fill />
         <S.CardTitle as={Typography} {...title} />

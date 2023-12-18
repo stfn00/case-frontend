@@ -10,13 +10,18 @@ import 'swiper/css/mousewheel'
 import 'swiper/css/navigation'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import * as Icons from '@fortawesome/free-solid-svg-icons'
+import * as IconsSolid from '@fortawesome/free-solid-svg-icons'
+import * as IconsBrands from '@fortawesome/free-brands-svg-icons'
 
-const iconList = Object.keys(Icons)
+const iconListSolid = Object.keys(IconsSolid)
   .filter((key) => key !== 'fas' && key !== 'prefix')
-  .map((icon) => Icons[icon])
+  .map((icon) => IconsSolid[icon])
 
-library.add(...iconList)
+const iconListBrands = Object.keys(IconsBrands)
+  .filter((key) => key !== 'fas' && key !== 'prefix')
+  .map((icon) => IconsBrands[icon])
+
+library.add(...iconListSolid, ...iconListBrands)
 
 const reset = css`
   *,

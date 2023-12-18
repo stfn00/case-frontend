@@ -70,15 +70,17 @@ export const styledVariant = (...args) => (props) => {
 }
 
 const processCss = (css) => {
-  if (!css) {return ''}
+  if (!css) return ''
 
   let injectedCss = ''
 
   if (typeof css === 'string') return css
 
+  if (typeof css?.raw === 'object') return css.raw[0]
+
   for (const [key, value] of Object.entries(css)) {
     let processedValue = value
-    if (key === 'font-size' || key === 'line-height') processedValue = rem(value)
+    if (key === 'font-size' || key === 'line-height') {processedValue = rem(value)}
     injectedCss += `${key}: ${processedValue}; `
   }
 
@@ -86,9 +88,10 @@ const processCss = (css) => {
 }
 
 for (const key in theme.breakpoints) {
-  mediaQuery[key] = function (css) {
+  mediaQuery[key] = function (css, until = false) {
+    const query = until ? 'max-width' : 'min-width'
     return `
-      @media screen and (min-width: ${theme.breakpoints[key]}px) {
+      @media screen and (${query}: ${theme.breakpoints[key]}px) {
         ${processCss(css)}
       }
     `

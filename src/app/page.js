@@ -57,6 +57,69 @@ const sections = [
       }
     ]
   },
+  {
+    type: 'Banner',
+    sectionID: 'we-are',
+    colorScheme: 'dark',
+    variant: 'right',
+    title: {
+      typo: 'display2XL',
+      content: 'we<br />are.',
+    },
+    paragraph: {
+      typo: 'paragraphSM',
+      content: 'Consectetur adipiscing elit.<br />Nulla condimentum tortor sem.',
+    },
+    cta: {
+      label: 'THE PLAYERS',
+    },
+    image: {
+      alt: 'Test',
+      src: '/images/banner-we-are.jpg'
+    }
+  },
+  {
+    type: 'Banner',
+    sectionID: 'we-do',
+    colorScheme: 'light',
+    variant: 'left',
+    title: {
+      typo: 'display2XL',
+      content: 'we<br />do.',
+    },
+    paragraph: {
+      typo: 'paragraphSM',
+      content: 'Consectetur adipiscing elit.<br />Nulla condimentum tortor sem.',
+    },
+    cta: {
+      label: 'THE PROJECTS',
+    },
+    image: {
+      alt: 'Test',
+      src: '/images/banner-we-do.jpg'
+    }
+  },
+  {
+    type: 'Banner',
+    sectionID: 'careers',
+    colorScheme: 'dark',
+    variant: 'right',
+    title: {
+      typo: 'display2XL',
+      content: 'careers.',
+    },
+    paragraph: {
+      typo: 'paragraphSM',
+      content: 'Consectetur adipiscing elit.<br />Nulla condimentum tortor sem.',
+    },
+    cta: {
+      label: 'THE POSITIONS',
+    },
+    image: {
+      alt: 'Test',
+      src: '/images/banner-careers.jpg'
+    }
+  }
 ]
 
 export default function Home() {

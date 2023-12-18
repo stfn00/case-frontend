@@ -24,9 +24,11 @@ export const BannerText = styled.div`
 export const BannerImage = styled.div`
   position: relative;
   aspect-ratio: 4 / 3;
-
+  overflow: hidden;
+  
   img {
     object-fit: cover;
     object-position: center;
+    opacity: 0;
   }
 `

@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import useEventListener from '@/hooks/useEventListener'
 
-import { Container, Visible } from '@/components/atoms/GridSystem'
+import { Container } from '@/components/atoms/GridSystem'
 import Typography from '@/components/atoms/Typography'
 import Button from '@/components/atoms/Button'
 
@@ -41,14 +41,14 @@ const Header = () => {
       <S.HeaderLogo>
         <Typography content="Logo" inheritedColorScheme="dark" />
       </S.HeaderLogo>
-      <Visible breakpoints={['lg', 'xl', 'xxl']}>
-        <S.HeaderMenu isSticky={isSticky}>
-          <Button label="we are" variant="secondary" inheritedColorScheme="dark" scrollTo="we-are" />
-          <Button label="we do" variant="secondary" inheritedColorScheme="dark" scrollTo="we-do" />
-          <Button label="careers" variant="secondary" inheritedColorScheme="dark" scrollTo="careers" />
-          <Button label="contact us" variant="secondary" inheritedColorScheme="dark" scrollTo="contact-us" />
-        </S.HeaderMenu>
-      </Visible>
+      {/* <Visible breakpoints={['lg', 'xl', 'xxl']}> */}
+      <S.HeaderMenu isSticky={isSticky}>
+        <Button label="we are" variant="secondary" inheritedColorScheme="dark" scrollTo="we-are" />
+        <Button label="we do" variant="secondary" inheritedColorScheme="dark" scrollTo="we-do" />
+        <Button label="careers" variant="secondary" inheritedColorScheme="dark" scrollTo="careers" />
+        <Button label="contact us" variant="secondary" inheritedColorScheme="dark" scrollTo="contact-us" />
+      </S.HeaderMenu>
+      {/* </Visible> */}
     </S.Header>
   )
 }

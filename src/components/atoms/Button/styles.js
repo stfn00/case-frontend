@@ -1,12 +1,6 @@
 import styled, { css } from 'styled-components'
 
 export const ButtonLabel = styled.span`
-  ${({ theme, typo, variant }) => (variant === 'primary') && css`
-    ${theme.typo(typo || 'paragraphXL')};
-  `}
-  ${({ theme, typo, variant }) => (variant === 'secondary') && css`
-    ${theme.typo(typo || 'paragraphSM')};
-  `}
   font-weight: 400;
   letter-spacing: 0.08em;
   pointer-events: none;
@@ -97,6 +91,7 @@ export const Button = styled.button`
   }
 
   ${ButtonLabel} {
+    ${({ theme, typo }) => theme.typo(typo || 'paragraphSM')};
     margin-right: ${({ theme, iconEnd }) => iconEnd ? theme.rem(4) : '0'};
   }
 

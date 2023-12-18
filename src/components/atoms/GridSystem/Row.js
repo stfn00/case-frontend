@@ -9,7 +9,7 @@ const Row = styled.div`
   flex: 1 1 auto;
   flex-wrap: wrap;
 
-  ${({ theme }) => Object.entries(theme.breakpoints).map(([dim]) => theme.mediaQuery[dim](`
+  ${({ theme, noGutter }) => !noGutter && Object.entries(theme.breakpoints).map(([dim]) => theme.mediaQuery[dim](`
     margin-left: -${theme.rem(gridConfig({ theme }).gutterWidth[dim] / 2)};
     margin-right: -${theme.rem(gridConfig({ theme }).gutterWidth[dim] / 2)};
   `))}

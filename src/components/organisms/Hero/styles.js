@@ -2,6 +2,11 @@ import styled from 'styled-components'
 
 export const Hero = styled.div`
   position: relative;
+  overflow: hidden;
+
+  ${({ theme }) => theme.mediaQuery.md(`
+    height: 100svh;
+  `, true)}
 `
 
 export const HeroText = styled.div`
@@ -21,11 +26,14 @@ export const HeroText = styled.div`
 
 export const HeroImage = styled.div`
   position: relative;
-  aspect-ratio: 3 / 4;
   
   ${({ theme }) => theme.mediaQuery.md(`
     aspect-ratio: 16 / 9;
   `)}
+
+  ${({ theme }) => theme.mediaQuery.md(`
+    height: 100svh;
+  `, true)}
 
   img {
     object-fit: cover;
@@ -39,8 +47,11 @@ export const HeroImage = styled.div`
 
 export const NavigationButton = styled.div`
   z-index: 1;
+  position: absolute;
+  top: calc(100% - 31px);
+  transform: translateY(-50%);
 
-  ${({ theme }) => theme.mediaQuery.sm(`
+  ${({ theme }) => theme.mediaQuery.md(`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);

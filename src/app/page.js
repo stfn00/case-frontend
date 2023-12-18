@@ -59,6 +59,70 @@ const sections = [
     ]
   },
   {
+    type: 'CardsGrid',
+    sectionID: crypto.randomUUID(),
+    colorScheme: 'gray',
+    items: [
+      {
+        id: crypto.randomUUID(),
+        image: {
+          alt: 'Test',
+          src: '/images/card-play-harder.png'
+        },
+        title: {
+          typo: 'paragraphLG',
+          content: 'PLAY HARDER',
+        },
+        paragraph: {
+          typo: 'paragraphSM',
+          content: 'Aenean mollis dolor a mattis viverra. In hac habitasse platea dictumst. Curabitur tempus dui tortor, et bibendum lacus eleifend ut.',
+        },
+        cta: {
+          label: 'READ MORE',
+          variant: 'primary'
+        }
+      },
+      {
+        id: crypto.randomUUID(),
+        image: {
+          alt: 'Test',
+          src: '/images/card-simplicity.png'
+        },
+        title: {
+          typo: 'paragraphLG',
+          content: 'SIMPLICITY',
+        },
+        paragraph: {
+          typo: 'paragraphSM',
+          content: 'Donec vitae augue tellus. Proin et urna sit amet metus fermentum dapibus non quis urna.',
+        },
+        cta: {
+          label: 'READ MORE',
+          variant: 'primary'
+        }
+      },
+      {
+        id: crypto.randomUUID(),
+        image: {
+          alt: 'Test',
+          src: '/images/card-innovation.png'
+        },
+        title: {
+          typo: 'paragraphLG',
+          content: 'INNOVATION',
+        },
+        paragraph: {
+          typo: 'paragraphSM',
+          content: 'Suspendisse vehicula, lectus sed molestie aliquam, arcu neque gravida lacus.',
+        },
+        cta: {
+          label: 'READ MORE',
+          variant: 'primary'
+        }
+      },
+    ]
+  },
+  {
     type: 'Banner',
     sectionID: 'we-are',
     colorScheme: 'dark',

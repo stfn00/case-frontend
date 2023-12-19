@@ -10,14 +10,14 @@ const Card = ({ image, title, paragraph, cta }) => {
   return (
     <S.Card className="card">
       <S.CardHeader>
-        <Image {...image} fill />
+        <Image {...image} sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw" fill />
         <S.CardTitle as={Typography} {...title} />
       </S.CardHeader>
       <S.CardContent>
         <Typography {...paragraph} />
       </S.CardContent>
       <S.CardFooter>
-        <Button {...cta} fullWidth />
+        <Button {...cta} $fullWidth />
       </S.CardFooter>
     </S.Card>
   )

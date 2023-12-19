@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <S.Header as={Container} forwardedAs="header">
-      <S.HeaderLogo>
+      <S.HeaderLogo isSticky={isSticky}>
         <Typography content="Logo" inheritedColorScheme="dark" />
       </S.HeaderLogo>
       <Visible breakpoints={['lg', 'xl', 'xxl']}>

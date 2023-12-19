@@ -13,18 +13,25 @@ export const Header = styled.header`
   z-index: ${({ theme }) => theme.layers.header};
 `
 
-export const HeaderLogo = styled.div``
-
-export const HeaderMenu = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.rem(24)};
-  padding: ${({ theme }) => theme.rem(0, 8)};
+const BackgroundAnimation = styled.div`
   background-image: linear-gradient(0deg, blue, blue);
   background-position: left 0%;
   background-repeat: no-repeat;
   background-size: 100% 0%;
   transition: background ${({ theme }) => theme.timing.fast};
+
+  ${({ isSticky, $isMenuOpen }) => (isSticky || $isMenuOpen) && css`
+    background-size: 100% 100%;
+  `}
+`
+
+export const HeaderLogo = styled(BackgroundAnimation)``
+
+export const HeaderMenu = styled(BackgroundAnimation)`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.rem(24)};
+  padding: ${({ theme }) => theme.rem(0, 8)};
 
   ${({ theme }) => theme.mediaQuery.md(`
     position: absolute;
@@ -35,10 +42,6 @@ export const HeaderMenu = styled.div`
     padding: ${theme.rem(8)};
     gap: ${theme.rem(8)};
   `, true)}
-
-  ${({ isSticky, $isMenuOpen }) => (isSticky || $isMenuOpen) && css`
-    background-size: 100% 100%;
-  `}
 
   button, a {
     ${({ theme, $isMenuOpen }) => theme.mediaQuery.md(`

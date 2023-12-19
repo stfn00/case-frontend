@@ -39,18 +39,21 @@ const Footer = () => {
       </S.FooterMenu>
       <S.FooterMenu>
         <Button
+          ariaLabel="Vai alla pagina Facebook"
           iconEnd="fa-brands fa-facebook"
           iconEndSize="big"
           variant="secondary"
           inheritedColorScheme="dark"
         />
         <Button
+          ariaLabel="Vai alla pagina Linkedin"
           iconEnd="fa-brands fa-linkedin"
           iconEndSize="big"
           variant="secondary"
           inheritedColorScheme="dark"
         />
         <Button
+          ariaLabel="Vai alla pagina Instagram"
           iconEnd="fa-brands fa-instagram"
           iconEndSize="big"
           variant="secondary"

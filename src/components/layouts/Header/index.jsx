@@ -76,6 +76,7 @@ const Header = () => {
       </Visible>
       <Visible breakpoints={['xs', 'sm', 'md']}>
         <Button
+          ariaLabel={isMenuOpen ? 'Chiudi Menu' : 'Apri Menu'}
           iconEnd={isMenuOpen ? 'x' : 'bars'}
           inheritedColorScheme="dark"
           handleClick={handleToggleMenu}

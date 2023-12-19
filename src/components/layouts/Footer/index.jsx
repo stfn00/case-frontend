@@ -37,7 +37,7 @@ const Footer = () => {
           scrollTo="contact-us"
         />
       </S.FooterMenu>
-      <S.FooterMenu>
+      <S.FooterMenuSocials>
         <Button
           ariaLabel="Vai alla pagina Facebook"
           iconEnd="fa-brands fa-facebook"
@@ -59,7 +59,7 @@ const Footer = () => {
           variant="secondary"
           inheritedColorScheme="dark"
         />
-      </S.FooterMenu>
+      </S.FooterMenuSocials>
     </S.Footer>
   )
 }

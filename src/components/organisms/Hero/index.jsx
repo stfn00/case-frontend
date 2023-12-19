@@ -33,8 +33,8 @@ const Hero = ({ sectionId, items = [] }) => {
         }}
         grabCursor={true}
       >
-        {items.map((item, i) => (
-          <SwiperSlide key={`hero-slide-${i + 1}-${item?.id}`}>
+        {items.map((item, idx) => (
+          <SwiperSlide key={`hero-slide-${idx + 1}-${item?.id}`}>
             <S.HeroText>
               <Typography typo={item?.title?.typo} weight="bold">
                 {item?.title?.content}
@@ -45,16 +45,22 @@ const Hero = ({ sectionId, items = [] }) => {
               </Typography>
             </S.HeroText>
             <S.HeroImage>
-              <Image src={item?.image?.src} alt={item?.image?.alt} fill />
+              <Image
+                src={item?.image?.src}
+                alt={item?.image?.alt}
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 50vw, 33vw"
+                fill
+                priority={idx === 0}
+              />
             </S.HeroImage>
           </SwiperSlide>
         ))}
       </Swiper>
       <S.ButtonPrev>
-        <ButtonForwardingRef ref={prevElRef} variant="secondary" iconEnd="chevron-left" iconEndSize="big" />
+        <ButtonForwardingRef ref={prevElRef} variant="secondary" iconEnd="chevron-left" iconEndSize="big" ariaLabel="Precedente slide" />
       </S.ButtonPrev>
       <S.ButtonNext>
-        <ButtonForwardingRef ref={nextElRef} variant="secondary" iconEnd="chevron-right" iconEndSize="big" />
+        <ButtonForwardingRef ref={nextElRef} variant="secondary" iconEnd="chevron-right" iconEndSize="big" ariaLabel="Prossima slide" />
       </S.ButtonNext>
     </S.Hero>
   ) : null

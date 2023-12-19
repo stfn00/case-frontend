@@ -17,7 +17,7 @@ const Card = ({ image, title, paragraph, cta }) => {
         <Typography {...paragraph} />
       </S.CardContent>
       <S.CardFooter>
-        <Button {...cta} $fullWidth />
+        <Button {...cta} fullWidth />
       </S.CardFooter>
     </S.Card>
   )

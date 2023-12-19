@@ -21,9 +21,9 @@ export const HeaderMenu = styled.div`
   gap: ${({ theme }) => theme.rem(24)};
   padding: ${({ theme }) => theme.rem(0, 8)};
   background-image: linear-gradient(0deg, blue, blue);
-  background-position: left 100%;
+  background-position: left 0%;
   background-repeat: no-repeat;
-  background-size: 0% 100%;
+  background-size: 100% 0%;
   transition: background ${({ theme }) => theme.timing.fast};
 
   ${({ isSticky }) => isSticky && css`

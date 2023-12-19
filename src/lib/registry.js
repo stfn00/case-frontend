@@ -1,11 +1,19 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components'
 
-const StyledComponentsRegistry = ({ children }) => {
+export default function StyledComponentsRegistry({ children }) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [styledComponentsStyleSheet] = useState(() => new ServerStyleSheet())
+
+  useServerInsertedHTML(() => {
+    const styles = styledComponentsStyleSheet.getStyleElement()
+    styledComponentsStyleSheet.instance.clearTag()
+    return <>{styles}</>
+  })
 
   const hiddenStyledProps = [
     'colorScheme',
@@ -19,31 +27,23 @@ const StyledComponentsRegistry = ({ children }) => {
     'lg',
     'xl',
     'xxl',
+    'typo',
+    'weight',
+    'align',
+    'justify',
+    'reverse',
+    'isSticky',
+    'fullWidth',
+    'noGutter',
+    'fluid',
   ]
-
-  const shouldForwardProp = (prop) => !hiddenStyledProps.includes(prop)
-
-  useEffect(() => {
-    return () => {
-      styledComponentsStyleSheet.instance.clearTag()
-    }
-  }, [styledComponentsStyleSheet])
 
   return (
     <StyleSheetManager
-      sheet={
-        typeof window !== 'undefined'
-          ? undefined
-          : styledComponentsStyleSheet.instance
-      }
-      shouldForwardProp={shouldForwardProp}
+      sheet={typeof window !== 'undefined' ? undefined : styledComponentsStyleSheet.instance}
+      shouldForwardProp={(prop) => !hiddenStyledProps.includes(prop)}
     >
       {children}
-      {useServerInsertedHTML(() =>
-        styledComponentsStyleSheet.getStyleElement()
-      )}
     </StyleSheetManager>
   )
 }
-
-export default StyledComponentsRegistry

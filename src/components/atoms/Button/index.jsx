@@ -47,7 +47,7 @@ const Button = ({
   inheritedColorScheme,
   innerRef,
   scrollTo,
-  handleClick = () => {},
+  handleClick = null,
   ...props
 }) => {
   // Get the selected color scheme from the context
@@ -69,7 +69,7 @@ const Button = ({
    * Handle scrolling to the specified element
    */
   const handleScrollTo = () => {
-    const offset = 104
+    const offset = 0
     const element = document.getElementById(scrollTo)
 
     if (!!element) {
@@ -84,6 +84,10 @@ const Button = ({
       )
       if (focusable && focusable.length > 0) {
         focusable[0].focus({ preventScroll: true })
+      }
+
+      if (handleClick) {
+        handleClick && handleClick()
       }
     }
   }

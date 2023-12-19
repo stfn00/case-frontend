@@ -26,7 +26,28 @@ export const HeaderMenu = styled.div`
   background-size: 100% 0%;
   transition: background ${({ theme }) => theme.timing.fast};
 
-  ${({ isSticky }) => isSticky && css`
+  ${({ theme }) => theme.mediaQuery.md(`
+    position: absolute;
+    top: 80px;
+    right: 16px;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: ${theme.rem(8)};
+    gap: ${theme.rem(8)};
+  `, true)}
+
+  ${({ isSticky, isMenuOpen }) => (isSticky || isMenuOpen) && css`
     background-size: 100% 100%;
   `}
+
+  button, a {
+    ${({ theme, isMenuOpen }) => theme.mediaQuery.md(`
+      ${isMenuOpen ? `
+        opacity: 1;
+        transition: opacity ${theme.timing.fast} 0.2s;
+      ` : `
+        opacity: 0;
+      `}
+    `, true)}
+  }
 `

@@ -81,7 +81,7 @@ const Header = () => {
           inheritedColorScheme="dark"
           handleClick={handleToggleMenu}
         />
-        <S.HeaderMenu isMenuOpen={isMenuOpen}>
+        <S.HeaderMenu $isMenuOpen={isMenuOpen}>
           <Button
             label="we are"
             variant="secondary"

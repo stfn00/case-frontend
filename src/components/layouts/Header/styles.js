@@ -36,13 +36,13 @@ export const HeaderMenu = styled.div`
     gap: ${theme.rem(8)};
   `, true)}
 
-  ${({ isSticky, isMenuOpen }) => (isSticky || isMenuOpen) && css`
+  ${({ isSticky, $isMenuOpen }) => (isSticky || $isMenuOpen) && css`
     background-size: 100% 100%;
   `}
 
   button, a {
-    ${({ theme, isMenuOpen }) => theme.mediaQuery.md(`
-      ${isMenuOpen ? `
+    ${({ theme, $isMenuOpen }) => theme.mediaQuery.md(`
+      ${$isMenuOpen ? `
         opacity: 1;
         transition: opacity ${theme.timing.fast} 0.2s;
       ` : `

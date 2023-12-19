@@ -14,5 +14,6 @@ export default {
   },
   layers: {
     header: 10,
+    cookieBanner: 10,
   },
 }

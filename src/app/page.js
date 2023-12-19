@@ -2,6 +2,7 @@ import ThemeProvider from '@/contexts/Theme'
 
 import Header from '@/components/layouts/Header'
 import Footer from '@/components/layouts/Footer'
+import CookieBanner from '@/components/layouts/CookieBanner'
 
 import SectionBuilder from '@/components/organisms/SectionBuilder'
 
@@ -193,6 +194,7 @@ export default function Home() {
       <Header />
       <SectionBuilder data={sections} />
       <Footer />
+      <CookieBanner />
     </ThemeProvider>
   )
 }
